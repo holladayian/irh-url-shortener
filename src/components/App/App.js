@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getUrls } from '../../apiCalls';
+import { fetcher } from '../../apiCalls';
 import UrlContainer from '../UrlContainer/UrlContainer';
 import UrlForm from '../UrlForm/UrlForm';
 
@@ -13,8 +13,9 @@ export class App extends Component {
   }
 
   componentDidMount = async() => {
-    const goturls = await getUrls()
+    const goturls = await fetcher.getUrls()
     this.setState({ urls: goturls.urls })
+    console.log(this.state)
   }
 
   render() {
