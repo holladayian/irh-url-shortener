@@ -36,7 +36,7 @@ export class App extends Component {
 
   render() {
     return (
-      <main className="App">
+      <main className="App" data-testid='app'>
         <header>
           <h1>URL Shortener</h1>
           <UrlForm postUrl={this.postUrl}/>
