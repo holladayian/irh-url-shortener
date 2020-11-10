@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { fetcher } from '../../apiCalls';
 
 class UrlForm extends Component {
   constructor(props) {
@@ -23,7 +22,7 @@ class UrlForm extends Component {
   }
 
   clearInputs = () => {
-    this.setState({title: '', urlToShorten: ''});
+    this.setState({title: '', long_url: ''});
   }
 
   render() {

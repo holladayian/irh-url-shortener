@@ -8,6 +8,7 @@ const UrlContainer = props => {
     urlEls = props.urls.map((url, i) => {
       return (
         <div className="url" data-testid={`all-${i}`} key={i}>
+          {/* <button onClick={() => props.delete(url)}>delete</button> */}
         <h3 data-testid={`title-${i}`} >{url.title}</h3>
         <a href={url.short_url} target="blank" data-testid={`short-${i}`}>{url.short_url}</a>
         <p data-testid={`long-${i}`}>{url.long_url}</p>
