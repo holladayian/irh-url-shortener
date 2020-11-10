@@ -45,9 +45,25 @@ describe('UrlContainer', () => {
 
     userEvent.type(long_urlInput,'mock url input');
     expect(long_urlInput.value).toEqual('mock url input');
-    // const typedInTitle = screen.getByText('mock title input');
-    // expect(typedInTitle).toBeInTheDocument()
+  })
+
+  it('3. When the form is submitted, make sure any appropriate functions are called', () => {
+    const mockPost = jest.fn()
+    render(
+      <UrlForm postUrl={mockPost}/>
+    )
 
 
+    const titleInput = screen.queryByTestId('title-input');
+    const long_urlInput = screen.queryByTestId('long_url-input');
+    const formButton = screen.queryByTestId('form-button');
+
+    userEvent.type(titleInput,'mock title input');
+
+    userEvent.type(long_urlInput,'mock url input');
+
+    userEvent.click(formButton);
+
+    expect(mockPost).toHaveBeenCalled()
   })
 })
