@@ -1,6 +1,8 @@
-import { UrlContainer } from './UrlContainer.js';
+import  UrlContainer  from './UrlContainer.js';
 import { screen, render } from '@testing-library/react';
+import React from 'react';
 import userEvent from  '@testing-library/user-event';
+import '@testing-library/jest-dom/extend-expect';
 
 
 describe('UrlContainer', () => {
@@ -15,6 +17,8 @@ describe('UrlContainer', () => {
     const m0title = screen.queryByTestId('title-0');
     const m0short = screen.queryByTestId('short-0');
     const m0long = screen.queryByTestId('long-0');
+
+    // screen.debug()
 
     expect(m0all).toBeInTheDocument();
     expect(m0title).toBeInTheDocument();
