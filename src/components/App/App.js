@@ -12,7 +12,9 @@ export class App extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount = async() => {
+    const goturls = await getUrls()
+    this.setState({ urls: goturls.urls })
   }
 
   render() {
