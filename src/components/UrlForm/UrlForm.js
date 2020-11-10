@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { fetcher } from '../../apiCalls';
 
 class UrlForm extends Component {
   constructor(props) {
@@ -6,7 +7,7 @@ class UrlForm extends Component {
     this.props = props;
     this.state = {
       title: '',
-      urlToShorten: ''
+      long_url: ''
     };
   }
 
@@ -16,6 +17,8 @@ class UrlForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    this.props.postUrl(this.state)
+    console.log(this.state)
     this.clearInputs();
   }
 
@@ -37,8 +40,8 @@ class UrlForm extends Component {
         <input
           type='text'
           placeholder='URL to Shorten...'
-          name='title'
-          value={this.state.title}
+          name='long_url'
+          value={this.state.long_url}
           onChange={e => this.handleNameChange(e)}
         />
 
