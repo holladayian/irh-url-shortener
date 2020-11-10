@@ -34,6 +34,12 @@ export class App extends Component {
     }
   }
 
+  delete(undesiredUrl) {
+    console.log(undesiredUrl.id)
+    // fetcher.delete(undesiredUrl.id)
+    // this.getUrls()
+  }
+
   render() {
     return (
       <main className="App" data-testid='app'>
@@ -42,7 +48,7 @@ export class App extends Component {
           <UrlForm postUrl={this.postUrl}/>
         </header>
 
-        <UrlContainer urls={this.state.urls}/>
+        <UrlContainer delete={this.delete} urls={this.state.urls}/>
       </main>
     );
   }

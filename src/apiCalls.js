@@ -15,6 +15,12 @@ export const fetcher = {
     }
     return fetch('http://localhost:3001/api/v1/urls', int)
     .then(response => response.json())
-  }
+  },
+  
+  //  delete(unrequestedUrl) {
+  //   let int = { method: 'DELETE'}
+  //   return fetch(`http://localhost:3001/api/v1/urls/${unrequestedUrl}`, int)
+  //   .then(response => response.json())
+  // }
   
 }
